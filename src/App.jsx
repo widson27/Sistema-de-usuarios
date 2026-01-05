@@ -2,6 +2,7 @@ import { useState } from "react"
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
 import ListaLocal from "./components/ListaLocal";
+import ListaApi from "./components/ListaApi";
 
 function App() {
   const [nomes, setNomes] = useState([]);
@@ -15,8 +16,9 @@ function App() {
       <Header />
       <Formulario onAdicionar={adicionarNome} />
       <ListaLocal nomes={nomes} />
+      <ListaApi />
     </div>
   )
 }
 
-export default App
+export default App;
