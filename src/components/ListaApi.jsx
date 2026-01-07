@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { buscarUsuarios } from "../services/api";
+
 
 function ListaApi() {
     const [usuarios, setUsuarios] = useState([]);
@@ -6,29 +8,31 @@ function ListaApi() {
     const [erro, setErro] = useState(false);
 
     useEffect(() => {
-        buscarUsuarios();
+        async function carregar() {
+            try {
+                setLoading(true);
+                setErro(false);
+
+                const dados = await buscarUsuarios();
+                setUsuarios(dados);
+            } catch (error) {
+                setErro(true);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        carregar();
     }, []);
 
-    async function buscarUsuarios() {
-        try {
-            setLoading(true);
-            setErro(false);
 
-            const response = await fetch(
-                "https://jsonplaceholder.typicode.com/users"
-            );
+    
+    if(loading) {
+        return <p>Carregando usuários...</p>
+    }
 
-            if (!response.ok) {
-                throw new Error("Erro na requisição");
-            }
-
-            const dados = await response.json();
-            setUsuarios(dados);
-        } catch (error) {
-            setErro(true);
-        } finally {
-            setLoading(false);
-        }
+    if (erro) {
+        return <p>Erro ao carregar usuários.</p>
     }
 
     return (
