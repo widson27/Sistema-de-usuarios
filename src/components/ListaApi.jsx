@@ -25,8 +25,6 @@ function ListaApi() {
         carregar();
     }, []);
 
-
-    
     if(loading) {
         return <p>Carregando usuários...</p>
     }

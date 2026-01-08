@@ -11,11 +11,16 @@ function App() {
     setNomes([...nomes, novoNome]);
   }
 
+  function removerNome(index) {
+    const novaLista = nomes.filter((_, i) => i !== index);
+    setNomes(novaLista);
+  }
+
   return (
     <div>
       <Header />
       <Formulario onAdicionar={adicionarNome} />
-      <ListaLocal nomes={nomes} />
+      <ListaLocal nomes={nomes} onRemover={removerNome} />
       <ListaApi />
     </div>
   )
