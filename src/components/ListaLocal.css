@@ -1,0 +1,26 @@
+.lista-local {
+  margin-bottom: 32px;
+}
+
+.lista-local ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-local li {
+  background-color: white;
+  padding: 10px 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.lista-local button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+}

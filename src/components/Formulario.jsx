@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Formulario.css"
 
 function Formulario({ onAdicionar }) {
     const [nome, setNome] = useState("");
@@ -14,7 +15,7 @@ function Formulario({ onAdicionar }) {
     }
 
     return (
-        <div>
+        <div className="formulario">
             <input
             type="text"
             placeholder="Digite o nome"

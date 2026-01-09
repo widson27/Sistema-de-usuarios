@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { buscarUsuarios } from "../services/api";
+import "./ListaApi.css";
+
 
 
 function ListaApi() {
@@ -26,15 +28,15 @@ function ListaApi() {
     }, []);
 
     if(loading) {
-        return <p>Carregando usuários...</p>
+        return <p className="loading">Carregando usuários...</p>
     }
 
     if (erro) {
-        return <p>Erro ao carregar usuários.</p>
+        return <p className="erro">Erro ao carregar usuários.</p>
     }
 
     return (
-        <div>
+        <div className="lista-api">
             <h2>Usuários da API</h2>
             <ul>
                 {usuarios.map((usuario) => (

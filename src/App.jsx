@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Formulario from "./components/Formulario";
 import ListaLocal from "./components/ListaLocal";
 import ListaApi from "./components/ListaApi";
+import "./App.css";
+
 
 function App() {
   const [nomes, setNomes] = useState([]);
@@ -17,7 +19,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-container">
       <Header />
       <Formulario onAdicionar={adicionarNome} />
       <ListaLocal nomes={nomes} onRemover={removerNome} />

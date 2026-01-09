@@ -1,6 +1,8 @@
+import "./ListaLocal.css"
+
 function ListaLocal({ nomes, onRemover }) {
   return (
-    <ul>
+    <ul className="lista-local">
       {nomes.map((nome, index) => (
         <li key={index}>
           {nome}

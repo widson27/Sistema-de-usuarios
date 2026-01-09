@@ -1,6 +1,8 @@
+import "./Header.css";
+
 function Header() {
     return (
-        <header>
+        <header className="header">
             <h1>Sistema de Usuários</h1>
         </header>
     );

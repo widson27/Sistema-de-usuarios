@@ -1,0 +1,28 @@
+.lista-api {
+  margin-top: 32px;
+}
+
+.lista-api h2 {
+  margin-bottom: 12px;
+}
+
+.lista-api ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-api li {
+  background-color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 4px solid #2563eb;
+}
+
+.loading {
+  color: #555;
+}
+
+.erro {
+  color: #dc2626;
+}
